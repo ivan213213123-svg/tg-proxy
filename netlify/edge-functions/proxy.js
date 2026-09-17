@@ -5,6 +5,7 @@ export default async (request) => {
     method: request.method,
     headers: request.headers,
     body: ["GET", "HEAD"].includes(request.method) ? undefined : request.body,
+    duplex: "half",
   };
   return fetch(target, init);
 };
